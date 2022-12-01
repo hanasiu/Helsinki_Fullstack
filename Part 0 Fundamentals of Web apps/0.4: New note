@@ -4,3 +4,9 @@ Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_notes
 Server->Browser: Redirect to /notes
 Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
 Server->Browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: [{"content":"ㅅㄱㅇ","date":"2022-12-01T06:35:49.601Z"}]
