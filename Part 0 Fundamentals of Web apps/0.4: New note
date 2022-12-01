@@ -9,4 +9,7 @@ server-->browser: main.css
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
 server-->browser: main.js
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-server->browser: [{"content":"ㅅㄱㅇ","date":"2022-12-01T06:35:49.601Z"}]
+server->browser: [..., {"content":"ㅅㄱㅇ","date":"2022-12-01T06:35:49.601Z"}]
+
+
+
