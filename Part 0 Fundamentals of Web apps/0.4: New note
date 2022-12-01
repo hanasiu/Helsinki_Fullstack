@@ -12,6 +12,7 @@ browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server->browser: [..., {"content":"ㅅㄱㅇ","date":"2022-12-01T06:35:49.601Z"}]
 
 
+//image here:
 //https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgMC40OiBOZXcgbm90ZQoKQnJvd3Nlci0-U2VydmVyOiBIVFRQIFBPU1QgaHR0cHM6Ly9zdHVkaWVzLmNzLmhlbHNpbmtpLmZpL2V4YW1wbGVhcHAvbmV3X25vdGVzCgBABi0-AFAHOiBSZWRpcmVjdCB0byAvAB4GAF0WR0UARS0AWBZIVE1MLWNvZGUKYgCBUAhzACs6bWFpbi5jc3MKAD4GLS0-AE8HOiAAEgkAH0lqAE4ZagAgRmRhdGEuanNvbgCBRwgAgUQKWy4uLiwgeyJjb250ZW50Ijoi44WF44Sx44WHIiwiZGF0ZSI6IjIwMjItMTItMDFUMDY6MzU6NDkuNjAxWiJ9XQo&s=default
 
 
