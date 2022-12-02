@@ -7,16 +7,6 @@ const Header = (prop) => {
   );
 };
 
-const Part = (prop) => {
-  return (
-    <>
-    <p>
-      {prop.part} {prop.exercises}
-    </p>
-    </>
-  )
-}
-
 const Content = (prop) => {
   return (
     <>
