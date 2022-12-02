@@ -10,12 +10,12 @@ const Header = (prop) => {
 const Part = (prop) => {
   return (
     <>
-    <p>
-      {prop.part} {prop.exercises}
-    </p>
+      <p>
+        {prop.part} {prop.exercises}
+      </p>
     </>
-  )
-}
+  );
+};
 
 const Content = (prop) => {
   return (
@@ -47,7 +47,14 @@ const App = () => {
   return (
     <div>
       <Header course={course} />
-      <Content part1={part1} part2={part2} part3={part3} exercises1={exercises1} exercises2={exercises2} exercises3={exercises3} />
+      <Content
+        part1={part1}
+        part2={part2}
+        part3={part3}
+        exercises1={exercises1}
+        exercises2={exercises2}
+        exercises3={exercises3}
+      />
       <Total
         exercises1={exercises1}
         exercises2={exercises2}
@@ -58,3 +65,4 @@ const App = () => {
 };
 
 export default App;
+
