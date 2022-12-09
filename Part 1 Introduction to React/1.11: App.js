@@ -8,12 +8,10 @@ const Button = (props) => (
 
 const StatisticLine = (props) => <tr><td>{props.text}</td><td>{props.value}</td></tr>
 
-const DisplayPositive = (props) => <tr><td>{props.text}</td><td>{props.value} %</td></tr>
-
 const Statistics = ({good, neutral, bad}) => {
   const all = good + neutral + bad;
   const average = (good*1+neutral*0+bad*-1)/all;
-  const positive = (good/all)*100; 
+  const positive = (good/all)*100 + "%";
   if(all === 0) return (<div><b>No feedback given</b></div>) 
   return (
     <div>
@@ -24,7 +22,7 @@ const Statistics = ({good, neutral, bad}) => {
       <StatisticLine text="bad" value={bad} />
       <StatisticLine text="all" value={all} />
       <StatisticLine text="average" value={average} />
-      <DisplayPositive text="positive" value={positive} />
+      <StatisticLine text="positive" value={positive} />
       </tbody>
       </table>
     </div>
