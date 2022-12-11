@@ -1,6 +1,6 @@
-Exercises 1.01 ~ 1.04 App.js : CourseInfo's App.js
+Exercises 1.01 ~ 1.05 App.js : CourseInfo's App.js
 
-1.04 is final version of CourseInfo.
+1.05 is final version of CourseInfo.
 
 **************************************************
 
