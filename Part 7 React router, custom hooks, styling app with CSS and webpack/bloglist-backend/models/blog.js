@@ -4,12 +4,12 @@ const commentSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
-        minlength: 1
+        minlength: 1,
     },
     timestamp: {
         type: Date,
         required: false,
-        default: Date.now
+        default: Date.now,
     },
 })
 

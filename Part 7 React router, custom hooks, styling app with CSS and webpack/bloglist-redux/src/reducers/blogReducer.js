@@ -51,14 +51,12 @@ export const updateLike = (blogObject, blogs) => {
 
 export const updateComment = (blogId, newComment, blogs) => {
     return async (dispatch) => {
-      const result = await blogService.updateComment(blogId, newComment)
-      const newBlogs = blogs.map((original) => {
-        return original.id === blogId ? result : original
-      })
-      dispatch(setBlogs(newBlogs))
+        const result = await blogService.updateComment(blogId, newComment)
+        const newBlogs = blogs.map((original) => {
+            return original.id === blogId ? result : original
+        })
+        dispatch(setBlogs(newBlogs))
     }
-  }
-  
-
+}
 
 export default blogSlice.reducer

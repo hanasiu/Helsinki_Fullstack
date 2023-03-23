@@ -12,8 +12,9 @@ const UserBlogs = () => {
     return (
         <div>
             <h4>added blogs</h4>
-            {sortedBlogs.map((blog) => blog &&
-            <li key={blog.id}>{blog.title}</li>)}
+            {sortedBlogs.map(
+                (blog) => blog && <li key={blog.id}>{blog.title}</li>
+            )}
         </div>
     )
 }

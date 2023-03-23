@@ -25,9 +25,7 @@ const updateLike = async (blogId) => {
     const config = {
         headers: { Authorization: token },
     }
-    const response = await axios.put(
-        `${baseUrl}/${blogId}/like`, {}, config
-    )
+    const response = await axios.put(`${baseUrl}/${blogId}/like`, {}, config)
     return response.data
 }
 
@@ -35,9 +33,13 @@ const updateComment = async (blogId, newComment) => {
     const config = {
         headers: { Authorization: token },
     }
-    const response = await axios.put(`${baseUrl}/${blogId}/comments`, {
-        comment: newComment,
-    }, config)
+    const response = await axios.put(
+        `${baseUrl}/${blogId}/comments`,
+        {
+            comment: newComment,
+        },
+        config
+    )
     return response.data
 }
 

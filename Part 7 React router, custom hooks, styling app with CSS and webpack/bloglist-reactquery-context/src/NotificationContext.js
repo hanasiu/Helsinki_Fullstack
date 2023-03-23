@@ -3,16 +3,16 @@ import { createContext, useReducer, useContext } from 'react'
 
 const notificationReducer = (state, action) => {
     switch (action.type) {
-      case "NOTIFY_GREEN":
-        return { message: action.message, type: "green" }
-      case "NOTIFY_RED":
-        return { message: action.message, type: "red" }
-      case "CLEAR":
-        return { message: null, type: null }
-      default:
-        return state
+        case 'NOTIFY_GREEN':
+            return { message: action.message, type: 'green' }
+        case 'NOTIFY_RED':
+            return { message: action.message, type: 'red' }
+        case 'CLEAR':
+            return { message: null, type: null }
+        default:
+            return state
     }
-  }
+}
 
 const NotificationContext = createContext()
 
@@ -27,13 +27,16 @@ export const useNotificationDispatch = () => {
 }
 
 export const NotificationContextProvider = (props) => {
-    const [notification, notificationDispatch] = useReducer(notificationReducer, '')
+    const [notification, notificationDispatch] = useReducer(
+        notificationReducer,
+        ''
+    )
 
     const setNotification = (message, type) => {
-        const actionType = type === "green" ? "NOTIFY_GREEN" : "NOTIFY_RED"
+        const actionType = type === 'green' ? 'NOTIFY_GREEN' : 'NOTIFY_RED'
         notificationDispatch({ type: actionType, message })
-        setTimeout(() => notificationDispatch({type: "CLEAR"}), 5000)
-      }
+        setTimeout(() => notificationDispatch({ type: 'CLEAR' }), 5000)
+    }
 
     return (
         <NotificationContext.Provider value={[notification, setNotification]}>

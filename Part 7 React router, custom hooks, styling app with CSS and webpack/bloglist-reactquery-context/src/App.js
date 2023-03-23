@@ -9,9 +9,8 @@ import Notification from './components/Notification'
 
 import { useUserDispatch, useUserValue } from './UserContext'
 
-
 const App = () => {
-    const userDispatch = useUserDispatch()  
+    const userDispatch = useUserDispatch()
     const user = useUserValue()
 
     const blogFormRef = useRef()
@@ -24,24 +23,18 @@ const App = () => {
             blogService.setToken(user.token)
         }
     }, [])
-    
 
-    
     const blogForm = () => (
         <Togglable buttonLabel="new blog" ref={blogFormRef}>
-            <BlogForm blogFormRef={blogFormRef}
-            />
+            <BlogForm blogFormRef={blogFormRef} />
         </Togglable>
     )
 
     const loginForm = () => (
         <Togglable buttonLabel="login">
-            <LoginForm
-            />
+            <LoginForm />
         </Togglable>
     )
-
-
 
     return (
         <div>

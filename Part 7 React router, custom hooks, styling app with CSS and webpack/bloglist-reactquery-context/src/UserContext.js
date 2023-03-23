@@ -3,11 +3,11 @@ import loginService from './services/login'
 import blogService from './services/blogs'
 
 const userReducer = (state, action) => {
-    switch(action.type) {
-        case "SET_USER":
+    switch (action.type) {
+        case 'SET_USER':
             return action.user
-            default:
-                return state
+        default:
+            return state
     }
 }
 
@@ -23,14 +23,12 @@ export const useUserDispatch = () => {
     return userAndDispatch[1]
 }
 
-
 export const UserContextProvider = (props) => {
     const [user, userDispatch] = useReducer(userReducer, null)
 
-    const getUser = (user) =>{ 
-            userDispatch({type: "SET_USER", user})
-        }
-
+    const getUser = (user) => {
+        userDispatch({ type: 'SET_USER', user })
+    }
 
     return (
         <UserContext.Provider value={[user, getUser]}>

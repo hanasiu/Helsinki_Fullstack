@@ -8,7 +8,7 @@ const BlogList = () => {
     const { loginUser, blogs } = useSelector((state) => ({
         loginUser: state.loginUser,
         blogs: state.blogs,
-      }));
+    }))
 
     const sortedBlogs = [...blogs].sort((a, b) => b.likes - a.likes)
     const blogFormRef = useRef()
@@ -18,14 +18,16 @@ const BlogList = () => {
         </Togglable>
     )
 
-
     return (
         <div>
             {loginUser ? blogForm() : null}
             {sortedBlogs.map(
-                (blog) => blog && 
-                <Link to={`/blogs/${blog.id}`} key={blog.id}>
-                    <div>{`${blog.title} - ${blog.author}`}</div></Link>
+                (blog) =>
+                    blog && (
+                        <Link to={`/blogs/${blog.id}`} key={blog.id}>
+                            <div>{`${blog.title} - ${blog.author}`}</div>
+                        </Link>
+                    )
             )}
         </div>
     )

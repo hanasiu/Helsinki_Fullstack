@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
-import { useNotificationDispatch } from '../NotificationContext' 
+import { useNotificationDispatch } from '../NotificationContext'
 import blogService from '../services/blogs'
 
 const BlogForm = ({ blogFormRef }) => {
@@ -15,15 +15,13 @@ const BlogForm = ({ blogFormRef }) => {
 
     const newBlogMutation = useMutation(blogService.create, {
         onSuccess: (newBlog) => {
-          const blogs = queryClient.getQueryData('blogs')
-          queryClient.setQueryData('blogs', blogs.concat(newBlog))
+            const blogs = queryClient.getQueryData('blogs')
+            queryClient.setQueryData('blogs', blogs.concat(newBlog))
         },
         onError: (err) => {
-          notifier(`error: ${err.message}`)
-        }
-      })
-
-
+            notifier(`error: ${err.message}`)
+        },
+    })
 
     const handleTitleChange = (event) => {
         setNewBlog({ ...newBlog, title: event.target.value })
@@ -37,7 +35,7 @@ const BlogForm = ({ blogFormRef }) => {
 
     const addBlog = async (blog) => {
         blogFormRef.current.toggleVisibility()
-        newBlogMutation.mutate({...blog, likes: 0})
+        newBlogMutation.mutate({ ...blog, likes: 0 })
     }
 
     const handleSubmit = async (event) => {
@@ -49,16 +47,20 @@ const BlogForm = ({ blogFormRef }) => {
         }
         try {
             await addBlog(blogObject)
-            notifier
-            (`a new blog ${blogObject.title} by ${blogObject.author} added`, 'green')
+            notifier(
+                `a new blog ${blogObject.title} by ${blogObject.author} added`,
+                'green'
+            )
             setNewBlog({
                 title: '',
                 author: '',
                 url: '',
             })
         } catch (e) {
-            notifier
-            (`fail to add a blog: title or author or url are blank: ${e.message}`, 'red')
+            notifier(
+                `fail to add a blog: title or author or url are blank: ${e.message}`,
+                'red'
+            )
         }
     }
 

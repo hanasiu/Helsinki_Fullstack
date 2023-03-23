@@ -15,11 +15,7 @@ export const Notification = () => {
     if (!notification.message) {
         return null
     } else {
-        return (
-            <div style={style}>
-                {notification.message}
-            </div>
-        )
+        return <div style={style}>{notification.message}</div>
     }
 }
 

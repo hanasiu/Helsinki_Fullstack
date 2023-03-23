@@ -25,9 +25,13 @@ const update = async (newObject) => {
     const config = {
         headers: { Authorization: token },
     }
-    const response = await axios.put(`${baseUrl}/${newObject.id}`, newObject, config)
+    const response = await axios.put(
+        `${baseUrl}/${newObject.id}`,
+        newObject,
+        config
+    )
     return response.data
-}   
+}
 
 const remove = async (id) => {
     const config = {

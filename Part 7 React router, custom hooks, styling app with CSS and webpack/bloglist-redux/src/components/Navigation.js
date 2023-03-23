@@ -8,9 +8,8 @@ const Navigation = () => {
     })
 
     const padding = {
-        padding: 5
-      }
-
+        padding: 5,
+    }
 
     return (
         <NavigationDiv>

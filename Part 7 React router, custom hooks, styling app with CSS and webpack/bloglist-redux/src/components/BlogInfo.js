@@ -6,8 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { Button } from '../style'
 
-
-const BlogInfo = ({blog}) => {
+const BlogInfo = ({ blog }) => {
     const [comment, setComment] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -51,11 +50,17 @@ const BlogInfo = ({blog}) => {
         event.preventDefault()
         console.log(blog)
         const commentObject = {
-            content: comment
+            content: comment,
         }
         try {
             await dispatch(updateComment(blog.id, commentObject, blogs))
-            dispatch(setNotification(`Comment '${commentObject.content}' added`, 'green', 5))
+            dispatch(
+                setNotification(
+                    `Comment '${commentObject.content}' added`,
+                    'green',
+                    5
+                )
+            )
             setComment('')
         } catch (e) {
             dispatch(
@@ -63,7 +68,6 @@ const BlogInfo = ({blog}) => {
             )
         }
     }
-
 
     return (
         blog && (
@@ -100,7 +104,8 @@ const BlogInfo = ({blog}) => {
                 </form>
                 {blog.comments.map((comment) => (
                     <li key={comment.id}>
-                        {comment.content} {new Date(comment.timestamp).toLocaleString()}
+                        {comment.content}{' '}
+                        {new Date(comment.timestamp).toLocaleString()}
                     </li>
                 ))}
             </div>

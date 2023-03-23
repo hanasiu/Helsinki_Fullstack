@@ -3,8 +3,7 @@ const Blog = require('../models/blog')
 //const jwt = require('jsonwebtoken')
 
 blogsRouter.get('/', async (request, response) => {
-    const blogs = await Blog.find({})
-        .populate('user', { username: 1, name: 1 })
+    const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
 
     response.json(blogs)
 })
@@ -101,17 +100,19 @@ blogsRouter.delete('/:id', async (request, response) => {
 
 blogsRouter.put('/:id/like', async (request, response) => {
     const blogId = request.params.id
-  
-    const updatedBlog = await Blog
-    .findByIdAndUpdate(blogId, { $inc: { likes: 1 } }, { new: true })
-    .populate('user', { username: 1 })
-  
+
+    const updatedBlog = await Blog.findByIdAndUpdate(
+        blogId,
+        { $inc: { likes: 1 } },
+        { new: true }
+    ).populate('user', { username: 1 })
+
     if (!updatedBlog) {
-      return response.status(404).json({ error: 'blog not found' })
+        return response.status(404).json({ error: 'blog not found' })
     }
-  
+
     response.json(updatedBlog.toJSON())
-  })
+})
 
 blogsRouter.put('/:id/comments', async (request, response) => {
     const body = request.body
@@ -130,6 +131,5 @@ blogsRouter.put('/:id/comments', async (request, response) => {
 
     response.json(updatedBlog.toJSON())
 })
-
 
 module.exports = blogsRouter

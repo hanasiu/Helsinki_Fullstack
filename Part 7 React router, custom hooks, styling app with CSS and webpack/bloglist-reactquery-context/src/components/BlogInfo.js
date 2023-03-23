@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from 'react-query' 
+import { useMutation, useQueryClient } from 'react-query'
 import { useNotificationDispatch } from '../NotificationContext'
 import blogService from '../services/blogs'
 import { useUserValue } from '../UserContext'
@@ -7,7 +7,6 @@ const BlogInfo = ({ blog }) => {
     const notifier = useNotificationDispatch()
     const user = useUserValue()
     const queryClient = useQueryClient()
-    
 
     const updateBlogMutation = useMutation(blogService.update, {
         onSuccess: () => {
@@ -19,8 +18,8 @@ const BlogInfo = ({ blog }) => {
     })
 
     const addLike = async (blog) => {
-        const updatedBlog = {...blog, likes: blog.likes+1}
-        console.log(typeof(blog.id))
+        const updatedBlog = { ...blog, likes: blog.likes + 1 }
+        console.log(typeof blog.id)
         updateBlogMutation.mutate(updatedBlog)
         notifier(`blog '${blog.title}' liked`, 'green')
     }
@@ -46,13 +45,21 @@ const BlogInfo = ({ blog }) => {
             <div id="url">{blog.url}</div>
             <div id="likes">
                 {blog.likes}
-                <button id="likes-button" onClick={() => addLike(blog)} type="button">
+                <button
+                    id="likes-button"
+                    onClick={() => addLike(blog)}
+                    type="button"
+                >
                     like
                 </button>
             </div>
             <div id="username">{blog.user.username}</div>
             {blog.user.username === user.username && (
-                <button id="remove-button" type="button" onClick={() => removeBlog(blog)}>
+                <button
+                    id="remove-button"
+                    type="button"
+                    onClick={() => removeBlog(blog)}
+                >
                     remove
                 </button>
             )}

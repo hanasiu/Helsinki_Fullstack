@@ -3,11 +3,9 @@ import { loginUser } from '../reducers/loginUserReducer'
 import { setNotification } from '../reducers/notificationReducer'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
-import {
-    useNavigate
-  } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Input, Button } from '../style'
-  
+
 const LoginForm = () => {
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
