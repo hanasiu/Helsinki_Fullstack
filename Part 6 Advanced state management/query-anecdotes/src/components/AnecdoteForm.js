@@ -12,7 +12,7 @@ const AnecdoteForm = () => {
       queryClient.setQueryData('anecdotes', anecdotes.concat(newAnecdote))
     },
     onError: (err) => {
-      dispatch(`too short anecdote, must have length 5 or more: ${err.message}`)
+      dispatch(`error: ${err.message}`)
     }
   })
 

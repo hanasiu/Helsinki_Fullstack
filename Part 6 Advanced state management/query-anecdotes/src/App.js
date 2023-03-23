@@ -12,7 +12,7 @@ const App = () => {
   const updateAnecdoteMutation = useMutation(updateAnecdote, {
     onSuccess: () => {
       queryClient.invalidateQueries('anecdotes')
-    },
+    },  
   })
 
   const dispatch = useNotificationDispatch()
