@@ -1,12 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Routes, Route, Navigate, useMatch } from 'react-router-dom'
 import BlogList from './components/BlogList'
 import UserList from './components/UserList'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
-import BlogForm from './components/BlogForm'
-import Togglable from './components/Togglable'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import UserBlogs from './components/UserBlogs'
@@ -39,12 +37,6 @@ const App = () => {
     const matchBlog = match
         ? blogs.find((blog) => blog.id === match.params.id)
         : null
-
-    const loginForm = () => (
-        <Togglable buttonLabel="login">
-            <LoginForm />
-        </Togglable>
-    )
 
     return (
         <Page>
