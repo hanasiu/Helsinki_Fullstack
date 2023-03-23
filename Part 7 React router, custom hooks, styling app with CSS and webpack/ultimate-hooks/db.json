@@ -1,0 +1,66 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "custom hooks are awesome"
+    },
+    {
+      "id": 2,
+      "content": "best feature ever <3"
+    },
+    {
+      "content": "kane",
+      "id": 3
+    },
+    {
+      "content": "kane",
+      "id": 4
+    },
+    {
+      "content": "kane",
+      "id": 5
+    },
+    {
+      "content": "kane is",
+      "id": 6
+    },
+    {
+      "content": "asdf",
+      "id": 7
+    },
+    {
+      "content": "fdsa",
+      "id": 8
+    },
+    {
+      "content": "qwerqwr",
+      "id": 9
+    },
+    {
+      "content": "rewq",
+      "id": 10
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "Matti Luukkainen",
+      "number": "040-12344565"
+    },
+    {
+      "id": 2,
+      "name": "Tarja Halonen",
+      "number": "040-2223334"
+    },
+    {
+      "name": "kane",
+      "number": "010-4002-3299",
+      "id": 3
+    },
+    {
+      "name": "kane",
+      "number": "010-4002-3299",
+      "id": 4
+    }
+  ]
+}
