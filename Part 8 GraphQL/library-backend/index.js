@@ -165,6 +165,9 @@ const resolvers = {
       return book
     },
     editAuthor: (root, args) => {
+      //in real world, there are people with same name. 
+      //so it is better to find by id. 
+      //but helsinki course use name here, maybe for simplicity
       const author = authors.find(((a) =>a.name === args.name))
       if(!author) {
         return null
