@@ -35,10 +35,6 @@ const Authors = (props) => {
   const authorNameList = authors.map((author)=>{
     return {value: author.name, label:author.name}
   })
-  
-  if (!props.show) {
-    return null
-  }
 
   return (
     <div>
@@ -51,7 +47,7 @@ const Authors = (props) => {
             <th>books</th>
           </tr>
           {authors.map((a) => (
-            <tr key={a.name}>
+            <tr key={a.id}>
               <td>{a.name}</td>
               <td>{a.born}</td>
               <td>{a.bookCount}</td>
