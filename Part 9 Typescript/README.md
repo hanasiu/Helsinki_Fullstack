@@ -1,0 +1,1 @@
+# folder 'flight-diaries-backend' and 'patientor-frontend' is provided by helsinki course au.
