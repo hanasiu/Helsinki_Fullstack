@@ -5,4 +5,7 @@ Learn React, Redux, Node.js, MongoDB, GraphQL and TypeScript in one go! This cou
 ![alt text](https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/d24da2ac642d9e640f2ed5232b8ca03b)  
 
 
-![alt text](https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/f5b1aad8fa7440e15cc2d0c7f6678507)
+![alt text](https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/f5b1aad8fa7440e15cc2d0c7f6678507)  
+
+
+![alt text](https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/9e105a86cbdfc764fd6d87884ff4aa9f)
